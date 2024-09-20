@@ -1,6 +1,5 @@
 
-
-																			( Chapter-1 )
+																											( Chapter-1 ) [ Networking Devices. ]
 
 * What Is Computer Network.
 - A Computer Network a Digital Communication Network.Allows Nodes To Share Resources Between The Electronic Devices.
@@ -15,27 +14,162 @@
 	
 
 * Switches.
-	- Switch Is a Hardware Component. That Connects A Multiple Devices On That.
+	-- Switch Is a Hardware Component. That Connects A Multiple Devices On That.
 		Connected Devices Are Called (LAN) Network.
 	
 			** Catalyst 9200. 
 
 * Routers.
-	- Routers Are Connects Networks Together.
-	- Are Used To Provide Connectivity Between Lan`s.
+	-- Routers Are Connects Networks Together.
+	-- Are Used To Provide Connectivity Between Lan`s.
 			** ISR 1000.
 		 	** ISR 900.
 			** ISR 4000.
 
 * Firewalls.
-	- A Firewall Is A Network Security Device. The Moniters The Network Traffic.
+	-- A Firewall Is A Network Security Device. The Moniters The Network Traffic.
 		to prevent unautorized access to a network.
 
-	- Moniter And Control Network  traffic based on Configured Rules.
+	-- Moniter And Control Network  traffic based on Configured Rules.
 			** ASA5500-X
 			** Firepower 2100.
 
 
 
 	 
+																											( Chapter-2 ) [ Interfaces And Cables ].
+		
+	** RJ-45 ( Registered JACK ).
+	-- RJ-45 Standardisted Interface Which Often Connects A Computer To A Local Area Network.
+		 (LAN).
+
+	**  Ethernet.
+	-- Ethernet Is A Wired Networking Techonoly Thats Connects Devices To A Network Using
+		 Cables.
+
+
+	** BITS & BYTES.
+
+	  					-- Speed Measured HOw Many Bits Sends Per Second.
+					ROUTER --- 0001101010101010 -- ROUTER  10101010  SWITCH	  -------- PC 
+					------												 ------  	          ------		|
+																																			|
+																																		-------- PC
+
+
+
+			* 1 KB  -- 1000 bits.
+			* 1 MB  -- 1000 * 1000
+			* 1 GB  -- 1000 * 1000 * 1000
+
+
+
+
+	** Ethernet Standards ( Copper ).
+	
+			** BASE -- Refers To Baseband Signaling.
+			** T 		-- Refers To Twisted Pair Cableing.
+		 
+
+			speed.				Common-Name		IEEE-Standard		Informal-Name 	Maximum-Length.
+		---------------------------------------------------------------------------
+		
+			10mbps			Ethernet				802.iu					10 base-t 			100m.
+
+			100mps			Fast Ethernet 	803.3u 					100 base-t 			100m
+		
+			1gbps				Gitabit Ether 	802.3ab 				1000 base-t 		100m
+
+			10gbps 			10 Git Ether 		802.3an					10G base-t 			100m
+
+
+
+		---------------------------------------------------------------------------
+
+
+			
+
+			** UTP -- ( Unshield Twisted Pair Cable ). 
+			
+				10 BASE-T  
+										--- 4 wires.  
+				100 BASE-T 
+			
+							
+						
+							 ( Straight Throw Cable )
+				TRANSMIT DATA 1 & 2. --- RECEIVE 1 && 2.	 
+				RECIVE DATA 	3 & 6. --- SENDS 	 3 && 6.
+
+
+								( CrossOver Cable ) 
+				SENDS DATA    1 && 2	-- RECIVE 3 && 6.		
+				RECEIVE DATA 	3 && 6. -- SENDS  1 && 3
+	
+										
+
+				1000 BASE-T  	
+										---	8 Wires.
+				10G  BASE-T 
+	
+		
+			
+				*** AUTO MDI-X 
+				--- Automaticlly Detecs Adjust The Receive And Sends Data.
+
+
+			568A -- 8 pins Highspeed Cable.
+			568b -- 8 Pins But Color Are Changed. 
+
+	 -----------------------------------------------------------------------------
+		 
+
+
+
+		**** Fibre-Optic Connections.
+		---- Fibre Optic Cable Need SFP Transceiver. ( Small Form-Factor Plugable )
+		
+
+		**** SFP Transceiver.
+		--- This Is Plugin Device Is Your Router Or Switch.
+
+
+		
+		* Fibre Cable Types.
+			
+			-- Core Dia
+
+	
+		Informal-Name			IEEE-Standard			Speed			Cable-Type			Maximum-Length.
+		-----------------------------------------------------------------------------
+
+		1000 Base-LX				802.3z					1gps			multimode or				500m (MM) 5km (SM)
+																									siglemode				
+
+
+		10G BASE-SR 			802.3ae   				10gbps 		multimode 					400m 
+
+	
+		10gb BASE-LR 			802.3ae						10gbps 		signle-Mode 				10km
+
+
+		10g BASE-ER 			802.3ae 					10gbps 		signle-mode 				30km
+		-------------------------------------------------------------------------------
+
+
+
+
+	UTP & Fiber Optic Differences.
+
+
+
+
+					--- UTP ---																		--- Fibre Optic ---
+
+	* Lower Cost Than Fiber.														* Maximum Range Of 30km 
+	* Maximum 100 meter.																* No Vulerable
+	* Magnetic Fieds Vulerable.													
+	* RJ-45 Ports Are Lower Cost Than SFP.
+
+
 
