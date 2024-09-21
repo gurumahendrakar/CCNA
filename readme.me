@@ -1,5 +1,5 @@
 
-																											( Chapter-1 ) [ Networking Devices. ]
+																				( DAY-1 ) [ Networking Devices. ]
 
 * What Is Computer Network.
 - A Computer Network a Digital Communication Network.Allows Nodes To Share Resources Between The Electronic Devices.
@@ -37,7 +37,7 @@
 
 
 	 
-																											( Chapter-2 ) [ Interfaces And Cables ].
+																      ( DAY-2 ) [ Interfaces And Cables ].
 		
 	** RJ-45 ( Registered JACK ).
 	-- RJ-45 Standardisted Interface Which Often Connects A Computer To A Local Area Network.
@@ -82,52 +82,50 @@
 
 			10gbps 			10 Git Ether 		802.3an					10G base-t 			100m
 
-
-
 		---------------------------------------------------------------------------
 
 
 			
 
-			** UTP -- ( Unshield Twisted Pair Cable ). 
+	** UTP -- ( Unshield Twisted Pair Cable ). 
 			
-				10 BASE-T  
+		10 BASE-T  
 										--- 4 wires.  
-				100 BASE-T 
+		100 BASE-T 
 			
 							
 						
-							 ( Straight Throw Cable )
-				TRANSMIT DATA 1 & 2. --- RECEIVE 1 && 2.	 
-				RECIVE DATA 	3 & 6. --- SENDS 	 3 && 6.
+					 ( Straight Throw Cable )
+		TRANSMIT DATA 1 & 2. --- RECEIVE 1 && 2.	 
+		RECIVE DATA 	3 & 6. --- SENDS 	 3 && 6.
 
 
-								( CrossOver Cable ) 
-				SENDS DATA    1 && 2	-- RECIVE 3 && 6.		
-				RECEIVE DATA 	3 && 6. -- SENDS  1 && 3
+  					( CrossOver Cable ) 
+		SENDS DATA    1 && 2	-- RECIVE 3 && 6.		
+		RECEIVE DATA 	3 && 6. -- SENDS  1 && 2
 	
 										
 
-				1000 BASE-T  	
+		1000 BASE-T  	
 										---	8 Wires.
-				10G  BASE-T 
+		10G  BASE-T 
 	
 		
 			
-				*** AUTO MDI-X 
-				--- Automaticlly Detecs Adjust The Receive And Sends Data.
+	** AUTO MDI-X 
+  --- Automaticlly Detecs Adjust The Receive And Sends Data.
 
 
-			568A -- 8 pins Highspeed Cable.
-			568b -- 8 Pins But Color Are Changed. 
+	568A -- 8 pins Highspeed Cable.
+	568b -- 8 Pins But Color Are Changed. 
 
 	 -----------------------------------------------------------------------------
 		 
 
 
 
-		**** Fibre-Optic Connections.
-		---- Fibre Optic Cable Need SFP Transceiver. ( Small Form-Factor Plugable )
+	**** Fibre-Optic Connections.
+  --- Fibre Optic Cable Need SFP Transceiver. ( Small Form-Factor Plugable )
 		
 
 		**** SFP Transceiver.
@@ -170,6 +168,80 @@
 	* Maximum 100 meter.																* No Vulerable
 	* Magnetic Fieds Vulerable.													
 	* RJ-45 Ports Are Lower Cost Than SFP.
+
+
+
+
+
+
+
+
+
+
+																		[ Chapter - 3 ]. (OSI-MODEL)
+
+
+
+
+
+
+** What Is Networking Model.
+-- Networking Models Categorize And Provide a Structure for networking Protocols and Standards.
+
+
+
+					 				   [ Not Communicate Because Different Protocols. ] 
+			[Apple Mac] ----------------------------------------------------> [ Dell PC ]
+
+
+** LAYERS [ OSI - MODEL ].
+
+
+	7 . Application Layer.
+	--  This Layer Is Closet To End User.
+	--  Intracts With Software Applications, For Example Your Webbrowser.
+	-- 	HTTP and HTTPS are Layer 7 Protocols.
+
+
+	6. Presentation Layer.
+	-- Encrypts And Decrypts Data Sent Over The Netowrk. 
+
+
+	5. Session Layer.
+	-- Control Dialogs Between Communicating Hosts.
+	-- Establishing, Manages And Terminates Connection Between The Local Applications.
+		 EXAMPLE : Web Browser. And Remote Application (Youtube).
+
+	4. Transport Layer. [ segment ] [ LAYER-4 Header Adds ].
+	-- Adding Port Numbers.
+	--. Segments And Ressamble Data For Communications Between End Hosts.
+	--  Break Large Piece Of Data Into Smaller Segments Easily Sent Over The Network.
+	--  provide host-to-host communication.
+
+
+	3. Network Layer. [ Packet ] [ LAYER-3 Header Adds ].
+	-- Provides Connectivty Between End Hosts on Different Networks.
+	-- Provides Logical Addressing (IP Address).
+	-- Provides Path Selection Between Source And Destination.
+	-- Router Operate at Layer 3.
+
+	2. Data Link Layer. [ Frame ] [ LAYER-2 Header ].
+	-- Provides Node-to-Node Connectivity And Data Transfer. ( PC to Switch,Switch To Router ).
+	-- Defines How Data Is Formatted For Transmission Over Physical Medium.
+		 EXAMPLE : Copper UTP.
+	-- Detects And Corrects Physical Layer Errors.
+
+	1. Physical Layer.	[ PDU ].
+	-- Digital Bits Converted To Electric Signals. ( Digital-to-AnalogConverter ).
+	-- Sends Data All Over The Network.
+	-- Adds The Mac-Address.
+ 
+
+
+ 
+	
+
+
 
 
 
