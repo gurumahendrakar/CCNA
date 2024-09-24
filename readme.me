@@ -1,5 +1,5 @@
 
-																				( DAY-1 ) [ Networking Devices. ]
+------------------------------------( DAY-1 ) [ Networking Devices. ]--------------------------------
 
 * What Is Computer Network.
 - A Computer Network a Digital Communication Network.Allows Nodes To Share Resources Between The Electronic Devices.
@@ -15,7 +15,7 @@
 
 * Switches.
 	-- Switch Is a Hardware Component. That Connects A Multiple Devices On That.
-		Connected Devices Are Called (LAN) Network.
+		Connected Devices Are Host This Area Of Called (LAN) Network.
 	
 			** Catalyst 9200. 
 
@@ -37,7 +37,7 @@
 
 
 	 
-																      ( DAY-2 ) [ Interfaces And Cables ].
+--------------------------------------( DAY-2 ) [ Interfaces And Cables ]-----------------------------
 		
 	** RJ-45 ( Registered JACK ).
 	-- RJ-45 Standardisted Interface Which Often Connects A Computer To A Local Area Network.
@@ -178,12 +178,7 @@
 
 
 
-																		[ Chapter - 3 ]. (OSI-MODEL)
-
-
-
-
-
+-------------------------------------[ DAY-3 ]. (OSI-MODEL)-------------------------------------
 
 ** What Is Networking Model.
 -- Networking Models Categorize And Provide a Structure for networking Protocols and Standards.
@@ -239,9 +234,47 @@
 
 
  
+
+
+-----------------------------------------[ DAY-4 ] CISCO CLI----------------------------------------
+
+	
+	** What Is Rollover Cable ( Console Port ).
+	-- Console Port Is Connet Switch To Electronic Device.
+	-- Two Types Of Console-Port ( Usb Mini-B | RJ45 ).
+
+		
+			HOW PINS ARE CONNECTED.
+
+			1 ---- 8 
+			2 ---- 7
+			3 ---- 6
+			4 ---- 5
+			5 ---- 4 
+			6 ---- 3 
+			7 ---- 2 
+			8 ---- 1 
+
+
+
+	** Access The CLI.
+	-- Use Putty Software To Configure Terminal.
+
+
+	**  COMMANDS.
 	
 
+		Router> 				--- Usermode. ( search list usermode commands )
+		Router> enable 	--- (Enter Privillage Mode.) 
+		Router# 				--- (Privilage Exact Mode.)
 
+		Router# configure terminal --- Global Configure Mode.
+		Router# service password-encryption --- Encrypts The Password But You Can Decode.
+		Router# enable secret $(password) 	--- More Safer To Use No-Decryption.
+		Router# show startup-config 				--- Switch Startup Script.
+		Router# show running-config 		--- Current Configure Settngs.
+		Router(config) do show running-config -- Execute Privillage Commands (do) front of the command.
+		
 
 
 
