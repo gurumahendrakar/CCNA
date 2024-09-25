@@ -316,7 +316,7 @@
 
 
 
--------------------------------------- [ DAY-6 ] EHTERNET 2-------------------------------------------
+-------------------------------------- [ DAY-5 ] EHTERNET 2-------------------------------------------
 
 	*** Minimum And Maximum Ethenrt Frame.
 
@@ -362,5 +362,55 @@
 	> show mac address-table.  -- Only 5mins In Entry Table Not Traffic Received Mac.
 	> clear mac address-table  dynamic --- cleared all learned mac-address.
 	> clear mac address-table dynamic address $(mac) -- delete single mac.
+
+
+	
+
+-----------------------------------[DAY-6] Ipv4 (Network Layer)--------------------------------------
+
+
+
+		class    range
+		----------------
+	 	A				0-127
+		B				128-191
+		C				192-223
+		D				224-239
+		E       240-255
+
+
+		**** LOOPBACK ADDRESS.
+		---- 127.0.0.0 - 127.255.255.255 This Range Use To Test Network.
+
+
+	 Search This Topics And Learned.
+	 -- maximum number of hosts.
+	 -- network address.
+	 -- boradcast address.
+	 -- first usable address.
+	 -- last usable address.
+
+
+
+
+
+	*** COMMANDS. (Router Commands)
+
+	router> en
+	router> hostname Router1
+	router# show ip interface brief --- return the interface related information.
+	router# configure terminal.
+	router(config) interface g0/1
+	router(config-if) ip address 192.168.1.1 255.255.255.0
+	router(config-if) no shutdown
+	router(config-if) do show interfaces g0/1
+	router(config-if) do show interfaces description.
+	router(config-if) do show ip interface
+	router(config-if) do copy running-config startup-config
+
+
+
+
+
 
 
