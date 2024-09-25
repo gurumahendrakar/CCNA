@@ -119,10 +119,6 @@
 	568A -- 8 pins Highspeed Cable.
 	568b -- 8 Pins But Color Are Changed. 
 
-	 -----------------------------------------------------------------------------
-		 
-
-
 
 	**** Fibre-Optic Connections.
   --- Fibre Optic Cable Need SFP Transceiver. ( Small Form-Factor Plugable )
@@ -207,26 +203,26 @@
 	-- Establishing, Manages And Terminates Connection Between The Local Applications.
 		 EXAMPLE : Web Browser. And Remote Application (Youtube).
 
-	4. Transport Layer. [ segment ] [ LAYER-4 Header Adds ].
+	4. Transport Layer. [ Called Segment ] [ LAYER-4 Header Adds ].
 	-- Adding Port Numbers.
 	--. Segments And Ressamble Data For Communications Between End Hosts.
 	--  Break Large Piece Of Data Into Smaller Segments Easily Sent Over The Network.
 	--  provide host-to-host communication.
 
 
-	3. Network Layer. [ Packet ] [ LAYER-3 Header Adds ].
+	3. Network Layer. [ Called Packet ] [ LAYER-3 Header Adds ].
 	-- Provides Connectivty Between End Hosts on Different Networks.
 	-- Provides Logical Addressing (IP Address).
 	-- Provides Path Selection Between Source And Destination.
 	-- Router Operate at Layer 3.
 
-	2. Data Link Layer. [ Frame ] [ LAYER-2 Header ].
+	2. Data Link Layer. [ Called Frame ] [ LAYER-2 Header ].
 	-- Provides Node-to-Node Connectivity And Data Transfer. ( PC to Switch,Switch To Router ).
 	-- Defines How Data Is Formatted For Transmission Over Physical Medium.
 		 EXAMPLE : Copper UTP.
 	-- Detects And Corrects Physical Layer Errors.
 
-	1. Physical Layer.	[ PDU ].
+	1. Physical Layer.	[ Called PDU ].
 	-- Digital Bits Converted To Electric Signals. ( Digital-to-AnalogConverter ).
 	-- Sends Data All Over The Network.
 	-- Adds The Mac-Address.
@@ -276,5 +272,95 @@
 		Router(config) do show running-config -- Execute Privillage Commands (do) front of the command.
 		
 
+
+
+-------------------------------------------[ DAY-5 ] ETHERNET 1--------------------------------------
+
+
+
+
+
+	*** ETHERNET HEADER. {Data Link Layer}.
+	--- [Eth-Header][Packet][Eth-Trailer]
+
+
+
+	*** [ ETH-HEADER ] 
+	Preamble (7byte) 				--- 7 bytes 10101010*7.
+	SFD 		 (1byte) 				--- 1 byte  01010111 --- That`s Indicate That`s New Packet.
+	Destination (6byte) 		--- Destination Mac.
+	Source 			(6byte) 	--- Source Mac.
+	Type or Length ( 2 byte )
+		Type -- A Value of 1500 less Length Field Use.
+		Length -- A Value Of 1536G greater indicates ipv4 or ipv6
+		TYPE -- IPV4=(0x0800).IPV6=(0x86DD.
+
+
+
+	*** [ ETH-TRAILOR ].
+	FCS (4byte) ---- Frame Check Sequence. Detects Curropted Data Running-By 'CRC Algorithm'.
+
+
+
+	*** Unicast 
+	--- Forwarding Packet One To One. No Broadcast This Packet.
+	--- Destination Mac-Address Know That`s Unicast.
+
+
+	*** Known Unicast.
+	--- Destination Mac-Address Stored In Switch Mac-Address-Table.
+
+
+	*** Unknown Unicast.
+	--- Destination Mac Not Stored In One Of The Option Broadcast Frame.
+
+
+
+-------------------------------------- [ DAY-6 ] EHTERNET 2-------------------------------------------
+
+	*** Minimum And Maximum Ethenrt Frame.
+
+			[preamble+sfd]+[dest]+[source]+[type/length]+[data]+[FCS].
+
+	--- Minimum Payload Size = 64 Byte. ( Without Preamble And SFD ).
+	--- Maximum Payload Size = 1518 Byte.
+	--- Payload Minimum Size Is = 46 Byte. Payload Was Not 46 Byte Padding Added.
+
+	
+	*** ARP ( Address Resulation Protocol ).
+	--- ARP Process Discover The Layer 2 Address (MAC.address).
+	--- Consists Of Two Messages.	
+				ARP REQUEST.
+				ARP REPLY.
+
+	--- ARP Request Is Broadcast.
+
+								ARP REQUEST
+	--- 		[ SRC.IP 191.168.1.1      ]
+					[ DEST.IP  152.25.25.1    ]
+					[ DEST.M   FFFF.FFFF.FFFF ]
+					[ SRC.M 	 .9D00 					]
+					[ TYPE     (0x0806)				] 
+
+
+							 ARP - REPLY.
+					[ SRC.IP 191.168.1.1      ]
+					[ DEST.IP  152.25.25.1    ]
+					[ DEST.M   .3900          ]
+					[ SRC.M 	 .9D00 					]
+					[ TYPE 			(0x0806) 			] 
+
+
+
+	> arp -a 	--- Shows The Dynamiclly Learned Mac-Address.
+		static -- default entry.
+		dynamic -- received by arp-reply.
+
+
+	** COMMANDS.
+
+	> show mac address-table.  -- Only 5mins In Entry Table Not Traffic Received Mac.
+	> clear mac address-table  dynamic --- cleared all learned mac-address.
+	> clear mac address-table dynamic address $(mac) -- delete single mac.
 
 
