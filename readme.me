@@ -514,4 +514,102 @@
 
 
 			
+--------------------------------------------------IPV4-HEADER---------------------------------------------------
+
+
+
+	IPV4_HEADER
+	---- 20 BYTES. -- ONE LINE IS 4BYTES. 5 * 4 Bytes = 20 BYTES
+	---- Mimimum Ipv4 Header Is 20 Bytes.
+
+
+
+
+	**** FIELDS ****** 
+
+
+
+	Version ( 4 bits )
+	--- IPV4 = 4 ( 0100 )
+	--- IPV6 = 6 ( 0110 ) 
+
+
+	IHL ( 4 bits )
+
+			1 	1  1  1
+			8   4  2  1 = 15  total length header.
 		
+	--- Total Length Of Header.
+	--- 5 X 4 = 20 Bytes Mimimum Header Size.
+	--- 15 X 4 = 60 Bytes Maximum Header Size.
+	
+	DSCP ( 6 bits ) 
+	--- Used For Qos(Quality Of Service)
+	--- Used To Priotize delay-sensitive data (streaming voice,video etc)
+
+
+	ECN ( 2 bits )
+	-- Conjection Happen Don`t Drop The Packet. It`s Turn On The Bit.
+
+
+	TotalLength. ( 16 bits )
+	--- Indicates The total length of the packet ( l3 header + l4 header )
+	--- Minimum Length 20 bytes.
+	--- Maximum Length 65534.
+
+
+	Identification. ( 16 bits )
+	--- Packet Fragmention (MTU) Is Lower The Packet. They Split Small Packet Add The Identification Number on That.
+
+
+	Flags. ( 3 bit )
+	---- first bit is reversed always is 0.
+			second bit is (Don`t Fragment Bit)   MTU Is Smaller Than The Packet It`s No Fragment Used.
+			third bit is ( More Fragment BIT)  MTU Is Smaller Than The Packet It`s Split The More Packets.
+
+
+	Fragment-Offset. ( 13 bits)
+	--- Your Packet Split 5 packets. with 100 bytes.
+
+
+	100/8 -- 1st fragment-offset.
+	200/8 -- 2nd fragment-offset.
+	300/8 --- 3rd frament-offset.
+	etc.
+
+
+	Time-To-Live ( 8 bits ) 
+	--- VAlue is 127.Avoiding Loops.
+	---- 3 Routers Are Passed The Frame 127-3 Values Are Descresed.
+
+
+	Protocol. ( 8 bits )
+	--- ICMP = 1
+	--- TCP  = 6
+	--- UDP = 17
+	--- OSPF = 89
+
+
+
+ Header-Checksum.
+ --- When Routers Receive The Packet. Runs The Algorithm The Check The Checksum.
+
+
+ Source-Ip.
+ --- YourIP
+
+ Destination-IP
+	--- Target-IP.
+
+
+
+ OPTIONS-Are. ( 20 bytes ) [ optional-variables ]
+
+
+
+
+
+
+	
+	Fragment-Offset.
+	---
