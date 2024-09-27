@@ -405,12 +405,113 @@
 	router(config-if) no shutdown
 	router(config-if) do show interfaces g0/1
 	router(config-if) do show interfaces description.
-	router(config-if) do show ip interface
+	router(config-if) do show ip interfaces
 	router(config-if) do copy running-config startup-config
+	router(config-if) do show ip route.
 
 
 
 
 
+----------------------------------------------------[DAY-7] Switch Interfaces------------------------------------------------
 
 
+	*** Things We`ll Cover.
+	--- interface speed and duplex.
+	--- speed and duplex autonegotion.
+	--- interface status.
+	--- interface counters & errors.
+
+
+
+						 ( ONLY ONE NETWORK )
+
+	[  switch-1  ] ---------------- [  switch-2   ]
+  |						 |								  |	  			  	|
+	|						 |								  |		  		  	|
+[host1] 		[host2]						 [host1] 		[host2]
+
+
+
+
+	*** COMMANDS.
+
+
+	SW> en
+	SW# show ip int brief 
+	SW# show interfaces status
+	SW# conf t
+	SW(config) int g0/1
+	SW(config-if) speed ? 
+	SW(config-if) duplex ?
+	SW(config-if) description "connected To R1"
+
+	
+
+
+	SW(config)# interfaces range f0/1 - 2
+	SW(config-if-range) description "not to use"
+	SW(config-if-range) shutdown
+
+
+
+
+	**** LAN HUB ( Modern Network No Where ).
+	--- This Is Half-Duplex Device.
+
+
+			[pc-1]   ==== [hub] === [pc-2]
+										  |
+											|
+											|
+										[pc-3]
+
+
+
+	 		[pc1] sends a frame sends the frame all ports. [ pc-2 ] and [ pc-3 ] 
+			
+
+			[pc-2] and [pc-3] send data same time. That`s Collision Because.
+			two packets tranfer the same wire that`s curropt the data this is collision.
+
+
+
+		  When Collision Occurs In HUB	( CSMA/CD HELPS ).
+		  -----------------------------------------------
+			When The Collision Detects, The Device Sends Jamming Signal To Inform
+			the other devices that collision happened.
+
+			jamming the signal random time with all ports.
+
+
+
+	  CSMA/CD --- Works ONLY Half-Duplex Most-Of-The-Times. Not In Full-Duplex.
+
+
+	*** Auto-Negotiation.
+	--- Detects The Speed Of PC/Laptop And Set The Switch Port speed. 
+	
+	--- When Autonegiation OFF.
+				
+				pc[100mbps half] --- [switch-100ps half]
+				pc[1000mpbs full] --- [ switch-1000ps full]
+				pc[100mbps full ] --- [ switch100 half] ------- collision happened here.
+
+
+
+
+
+	*** Interface Errors.
+		Router# show interfaces g0/1. End Of The Text.
+
+	 	> Runts :  Frames Smaller Than Minimum.
+		> Giant:   Frames Larger Than The Maximum Frame Size.
+		> CRC  :   CRC Check Failed.(Ethernet Frame FCS Tailer)
+		> Frame : Frames That Have Incorrect Format.
+		> Input : Total Various Counters,Such As The Above Fours.	
+		> output errors : Frame The Switch Tried Send But Failed To Due To An Error.
+
+
+
+			
+		
